@@ -1,0 +1,13 @@
+base: ubuntu:16.04
+targets:
+  - name: tutorial
+    language: go
+    version: "1.11"
+    corpus: ./corpus
+    harness:
+      function: Fuzz
+      # package defines where to import FuzzerEntrypoint from
+      package: plan9.io/fuzz
+      # the repository will be cloned to
+      # $GOPATH/src/github.com/fuzzbuzz/tutorial
+      checkout: plan9.io
